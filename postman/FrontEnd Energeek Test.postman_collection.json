@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "fab6dbaf-5bcf-441d-b654-841273ca2cc6",
+		"name": "FrontEnd Energeek Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4273362"
+	},
+	"item": [
+		{
+			"name": "Select List",
+			"item": [
+				{
+					"name": "Job",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/select_list/job?search",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"select_list",
+								"job"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/select_list/skill?search=",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"select_list",
+								"skill"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recruitment",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Rizal Kurnia Pratama\",\n    \"email\": \"rkurniapratama@gmail.com\",\n    \"phone\": \"012345678987\",\n    \"birth_year\": \"1998\",\n    \"job_id\": 1,\n    \"skill_id\": [1, 2, 3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/recruitment",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"recruitment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "candidate_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "file[]",
+									"type": "file",
+									"src": "/Users/energeek/Downloads/1200px-Laravel.svg.png"
+								},
+								{
+									"key": "file[]",
+									"type": "file",
+									"src": "/Users/energeek/Downloads/1039-1936-1-SM.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/recruitment/upload_file",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"recruitment",
+								"upload_file"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		        {
+					"name":"Register",
+					"Request":{
+						"method":"POST",
+						"header":[],
+						"body":{
+							"raw": "{{url}}api/registrstion/register?search=",
+							"host": [
+								"{{url}}api"
+							],"path": [
+								"registration",
+								"register"
+							],"query": [
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+
+						}
+					}
+				}
+		
+	],
+	                
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://fe-energeek-test/",
+			"type": "string"
+		}
+	]
+}
