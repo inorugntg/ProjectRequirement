@@ -48,7 +48,8 @@ Route::group(['prefix' => 'recruitment', 'middleware' => ['api']], function () {
     Route::post('/upload_file', [RecruitmentApiController::class, 'uploadFile']);
 });
 
-Route::group(['prefix' => 'registration', 'middleware' => ['api']], function () {
+
+Route::group(['prefix' => 'C_AuthController', 'middleware' => ['api']], function () {
     Route::get('/register', [C_AuthApiController::class, 'index']);
     Route::post('/custom-register', [C_AuthApiController::class, 'customregister']);
 });

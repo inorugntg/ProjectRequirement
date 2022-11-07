@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
 
                 $user->name = $value['name'];
                 $user->username = $value['username'];
-                $user->password = $value['password'];   
+                $user->password = $value['password'];
                 $user->save();
             }
 

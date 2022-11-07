@@ -19,7 +19,7 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="date" placeholder="BirthDay" name="date" id="date" value="{{ old ('date') }}" class="form-control" required
+                                <input type="text" placeholder="BirthYear" name="date" id="date" value="{{ old ('date') }}" class="form-control" required
                                     autofocus>
                                 @if ($errors->has('date'))
                                 <span class="text-danger">{{ $errors->first('date') }}</span>
