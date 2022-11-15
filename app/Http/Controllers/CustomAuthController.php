@@ -22,7 +22,7 @@ class CustomAuthController extends Controller
     }
 
     public function uploads(Request $request){
-        $datainput=['nama'=>$request->nama, 'date'=>$request->date, 'email'=>$request->email, 'phone'=>$request->phone, 'job'=>$request->job,'skill'=>$request->skill];
+        $datainput=['nama'=>$request->nama, 'birth_year'=>$request->birth_year, 'email'=>$request->email, 'phone'=>$request->phone, 'job'=>$request->job,'skill'=>$request->skill];
         $this->register->uploads($datainput);
     }
  

@@ -50,6 +50,9 @@ Route::group(['prefix' => 'recruitment', 'middleware' => ['api']], function () {
 
 
 Route::group(['prefix' => 'C_AuthController', 'middleware' => ['api']], function () {
-    Route::get('/register', [C_AuthApiController::class, 'index']);
+    Route::get('/register', [C_AuthApiController::class,'pengguna']);
     Route::post('/custom-register', [C_AuthApiController::class, 'customregister']);
 });
+
+Route::resource('Pengguna', C_AuthApiController::class);
+// Routr::group(['prefix' => '/data'])

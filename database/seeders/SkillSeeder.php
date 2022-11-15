@@ -82,6 +82,10 @@ class SkillSeeder extends Seeder
                     'id' => 16,
                     'name' => 'Javascript',
                 ],
+                [
+                    'id' => 17,
+                    'name' => 'Photoshop'
+                ]
             ];
 
             foreach ($data as $key => $value) {

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use Wildside\Userstamps\Userstamps;
 
-class Pengguna extends Authenticatable implements JWTSubject
+class Pengguna extends Model
 {
     use HasFactory,
     Notifiable,
@@ -18,11 +18,11 @@ class Pengguna extends Authenticatable implements JWTSubject
     SoftCascadeTrait,
     Userstamps;
 
-protected $guard_name = 'api';
+// protected $guard_name = 'api';
 
 protected $fillable = [
     'nama',
-    'date',
+    'birth_year',
     'email',
     'phone',
     'job',
@@ -41,7 +41,7 @@ protected $casts = [
 ];
 
 protected $softCascade = [
-    'user_logs',
+    'RegisterModel',
 ];
 
 public function getJWTIdentifier()
@@ -58,8 +58,14 @@ public function getJWTCustomClaims()
     ];
 }
 
-public function user_logs()
+public function Register()
 {
-    return $this->hasMany(UserLog::class, 'user_id', 'id');
+    return $this->belongsToMany(Pengguna::class, 'job','skill');
 }
+
+public function Pengguna()
+{
+    return $this->hasMany(Pengguna::class,'job','skill');
+}
+
 }
