@@ -54,5 +54,10 @@ Route::group(['prefix' => 'C_AuthController', 'middleware' => ['api']], function
     Route::post('/custom-register', [C_AuthApiController::class, 'customregister']);
 });
 
+Route::prefix('C_AuthController')->group(function () {
+    Route::get('apiwithoutkey', [ProjectController::class, 'pengguna'])->name('pengguna');
+    Route::get('apiwithkey', [ProjectController::class, 'customregister'])->name('customregister');
+});
+
 Route::resource('Pengguna', C_AuthApiController::class);
 // Routr::group(['prefix' => '/data'])
